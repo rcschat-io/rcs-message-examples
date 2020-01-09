@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+// java version
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+def jackson_version = "2.10.0"
+def lombok_version = "1.18.10"
+def commons_version = "3.9"
+def commons_codec_version = "1.13"
+def slf4j_api_version = "1.7.29"
+def log4j_version = "2.12.1"
+
+dependencies {
+    compile files("libs/rcs-message-1.0.0-all.jar")
+    compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jackson_version"
+    compile "org.apache.commons:commons-lang3:$commons_version"
+    // needed if use Base64
+    compile "commons-codec:commons-codec:$commons_codec_version"
+    compileOnly "org.projectlombok:lombok:$lombok_version"
+    annotationProcessor "org.projectlombok:lombok:$lombok_version"
+
+    compile "org.slf4j:slf4j-api:$slf4j_api_version"
+    compile "org.apache.logging.log4j:log4j-slf4j-impl:$log4j_version"
+    compile "org.apache.logging.log4j:log4j-core:$log4j_version"
+}
+
+sourceSets {
+    main.java.srcDir 'src/main/java'
+}
+
+mainClassName = 'io.rcschat.messages.examples.ExampleGenerator'
+
+task wrappers(type: Wrapper) {
+    gradleVersion = '6.0.1'
+}
