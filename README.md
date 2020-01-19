@@ -13,7 +13,7 @@ Running at the command line
 ```
 
 ## Construct messages
-[rcs-message](https://apidoc.rcschat.io/apidoc/rcsmessage/index.html?overview-summary.html) implements RCS messages that are standardized by GSMA RCS technical specifications ["Rich Communication Suite 7.0 Advanced Communications Services and Client Specification v8.0 Section 3.6.10"](https://www.gsma.com/futurenetworks/wp-content/uploads/2017/06/RCS_7_UNI.zip).
+[rcs-message](https://apidoc.rcschat.io/apidoc/rcsmessage/index.html?overview-summary.html) implements RCS messages that are standardized by the GSMA ["RCS MaaP Chatbot API Specifications"](https://www.gsma.com/futurenetworks/wp-content/uploads/2019/09/FNW.11_v1.0.pdf).
 A message can be constructed in the following ways:
 * Message Builder (**recommended**)
 * NoArgsConstructor with Setter
