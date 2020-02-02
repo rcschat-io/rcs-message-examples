@@ -15,8 +15,6 @@ public class ExampleGenerator {
             JsonConverter.serialize(TextMessage.generateTextMessage(USER_CONTACT_NUMBER, HELLO_MESSAGE)));
         log.info("TextMessage with Setter:\n{}\n",
             JsonConverter.serialize(TextMessage.generateTextMessageSetter(USER_CONTACT_NUMBER, HELLO_MESSAGE)));
-        log.info("TextMessage with Wither:\n{}\n",
-            JsonConverter.serialize(TextMessage.generateTextMessageWither(USER_CONTACT_NUMBER, HELLO_MESSAGE)));
         log.info("TextMessage with SuggestedReply ChipList:\n{}\n",
             JsonConverter.serialize(TextMessage.generateTextMessageWithSuggestedReplyChiplist(USER_CONTACT_NUMBER, HELLO_MESSAGE)));
         log.info("TextMessage with RequestLocation ChipList:\n{}\n",

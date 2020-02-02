@@ -17,7 +17,6 @@ Running at the command line
 A message can be constructed in the following ways:
 * Message Builder (**recommended**)
 * NoArgsConstructor with Setter
-* NoArgsConstructor with Wither
 * AllArgsConstructor
 
 SuggestedReply and SuggestedAction in Richcard and SuggestedChipList can also be constructed with helper functions:
@@ -44,21 +43,13 @@ Additional helper functions can be requested through issues.
     ```
 2. NoArgsConstructor with Setter
     ```
-    final RcsMessage rcsMessage = new RcsMessage();
-    rcsMessage.setTextMessage("Hello! Welcome to RCSChat.io");
-
-    final ChatMessage chatMessage = new ChatMessage();
-    chatMessage.setMessageContact(new MessageContact("+11234567890"));
-    chatMessage.setRcsMessage(rcsMessage);
-    ```
-3. NoArgsConstructor with Wither
-    ```
     final ChatMessage chatMessage = new ChatMessage()
-        .withMessageContact(new MessageContact("+11234567890"))
-        .withRcsMessage(new RcsMessage()
-            .withTextMessage("Hello! Welcome to RCSChat.io")
+        .setMessageContact(new MessageContact("+11234567890"))
+        .setRcsMessage(new RcsMessage()
+            .setTextMessage("Hello! Welcome to RCSChat.io")
         );
     ```
+
     The corresponding Json string representation:
     ```aidl
     {
@@ -98,9 +89,9 @@ Additional helper functions can be requested through issues.
 2. Adder
     ```aidl
     final ChatMessage chatMessage = new ChatMessage()
-        .withMessageContact(new MessageContact("+11234567890"))
-        .withRcsMessage(new RcsMessage()
-            .withTextMessage("Hello! Welcome to RCSChat.io")
+        .setMessageContact(new MessageContact("+11234567890"))
+        .setRcsMessage(new RcsMessage()
+            .setTextMessage("Hello! Welcome to RCSChat.io")
         );
 
     chatMessage.addSuggestedRequestLocationAction("Current Location");

@@ -70,21 +70,10 @@ public class TextMessage {
     }
 
     public static ChatMessage generateTextMessageSetter(final String userContact, final String text) {
-        final RcsMessage rcsMessage = new RcsMessage();
-        rcsMessage.setTextMessage(text);
-
-        final ChatMessage chatMessage = new ChatMessage();
-        chatMessage.setMessageContact(new MessageContact(userContact));
-        chatMessage.setRcsMessage(rcsMessage);
-
-        return chatMessage;
-    }
-
-    public static ChatMessage generateTextMessageWither(final String userContact, final String text) {
         return new ChatMessage()
-            .withMessageContact(new MessageContact(userContact))
-            .withRcsMessage(new RcsMessage()
-                .withTextMessage(text)
+            .setMessageContact(new MessageContact(userContact))
+            .setRcsMessage(new RcsMessage()
+                .setTextMessage(text)
             );
     }
 }
